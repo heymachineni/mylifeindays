@@ -19,7 +19,7 @@
 - 2000-01-01:
     name: Y2K - The world did not end!
     desc: |
-      Celebrated the new millennium. Computers survived!
+      Celebrated the new millennium.
 
 - 2005-09-01:
     name: Started school
@@ -30,48 +30,26 @@
     name: First iPhone launched
     desc: |
       Steve Jobs introduces the iPhone, changing the world forever.
-      "Today, Apple is going to reinvent the phone."
 
 - 2010-01-01:
     name: New decade begins
     desc: |
       Entering the 2010s with hopes and dreams.
 
-- 2012-10-23:
-    name: iPad Mini launched
-    desc: |
-      Apple releases the smaller tablet that fits in one hand.
-
 - 2015-06-01:
     name: Graduated high school
     desc: |
       A major milestone completed.
-
-- 2016-03-09:
-    name: AlphaGo defeats world champion
-    desc: |
-      Google's AI beats Lee Sedol at Go, marking a major AI breakthrough.
 
 - 2020-01-01:
     name: Welcome to the 2020s
     desc: |
       A new decade full of possibilities.
 
-- 2020-03-11:
-    name: WHO declares COVID-19 pandemic
-    desc: |
-      The world changes as we know it.
-
 - 2022-11-30:
-    name: ChatGPT is released
+    name: ChatGPT launches
     desc: |
       OpenAI releases ChatGPT, bringing AI to the masses.
-      The AI revolution begins for everyone.
-
-- 2023-03-14:
-    name: GPT-4 is released
-    desc: |
-      OpenAI releases GPT-4, the most advanced AI model yet.
 
 - 2024-12-31:
     name: Today - Building my timeline
@@ -84,16 +62,6 @@
     name: Future milestone
     desc: |
       Looking forward to what the future holds.
-
-- 2035-01-01:
-    name: Mid-2030s prediction
-    desc: |
-      By now, AI might be integrated into every aspect of life.
-
-- 2040-01-01:
-    name: The 2040s begin
-    desc: |
-      What will technology look like in the 2040s?
 
 - 2050-01-01:
     name: Mid-century celebration
