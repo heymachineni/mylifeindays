@@ -12,7 +12,8 @@
 
 	// TODO: always start 2 weeks before the first entry
 	const startDate = new Date('1997-01-01');
-	const today = new Date();
+	// Use India/Mumbai timezone for today
+	const today = new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
 	const endDate = new Date('2100-12-31');
 
 	export let data;

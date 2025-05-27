@@ -16,7 +16,9 @@ const getDecadeTitle = (age: number): string => {
 	if (age === 50) return "My 50s";
 	if (age === 60) return "My 60s";
 	if (age === 70) return "My 70s";
-	if (age >= 80) return "Endgame (bonus years)";
+	if (age === 80) return "My 80s";
+	if (age === 90) return "My 90s";
+	if (age >= 100) return "Endgame (bonus years)";
 	return `Age ${age}`;
 };
 
