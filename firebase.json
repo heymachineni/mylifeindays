@@ -1,0 +1,36 @@
+{
+  "hosting": {
+    "site": "life-in-weeks-4d29b",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/dashboard{,/**}",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/admin{,/**}",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/life-in-weeks{,/**}",
+        "destination": "/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+} 
