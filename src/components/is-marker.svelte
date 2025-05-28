@@ -21,7 +21,7 @@
 
 {#if marker.markerType === 'birthday'}
 	<span class="birthday" data-tooltip="{formattedDate}">
-		{verb} <span class="age">{marker.name}</span> in {year}
+		🎂 {verb} <span class="age">{marker.name}</span> in {year}
 	</span>
 {/if}
 
@@ -30,10 +30,19 @@
 {/if}
 
 {#if marker.markerType === 'decade'}
-	<span class="decade-marker">{marker.name}</span>
+	<div class="decade-container">
+		<span class="decade-marker">{marker.name}</span>
+	</div>
 {/if}
 
 <style>
+	/* Pastel color palette for sophisticated UI */
+	:root {
+		--pastel-birthday: rgba(255, 182, 193, 0.15); /* Light pink */
+		--pastel-birthday-hover: rgba(255, 182, 193, 0.25);
+		--pastel-birthday-text: #d63384;
+	}
+
 	span {
 		display: inline;
 		color: var(--color-life);
@@ -45,9 +54,10 @@
 
 	.birthday {
 		letter-spacing: normal;
-		background-color: rgba(253, 39, 11, 0.08);
+		font-family: inherit;
+		background-color: var(--pastel-birthday);
 		padding: 0.5em 0.75em;
-		border-radius: 12px;
+		border-radius: 50px;
 		cursor: default;
 		font-size: 0.9em;
 		line-height: 1.4;
@@ -58,10 +68,11 @@
 		word-break: keep-all;
 		overflow-wrap: normal;
 		position: relative;
+		color: rgba(0, 0, 0, 0.6);
 	}
 
 	.birthday:hover {
-		background-color: rgba(253, 39, 11, 0.12);
+		background-color: var(--pastel-birthday-hover);
 	}
 	
 	.birthday:hover::after {
@@ -75,7 +86,7 @@
 		-webkit-backdrop-filter: blur(20px);
 		color: white;
 		padding: 0.5em 0.75em;
-		border-radius: 8px;
+		border-radius: 50px;
 		font-size: 0.85em;
 		white-space: nowrap;
 		margin-bottom: 8px;
@@ -85,21 +96,48 @@
 	
 	.age {
 		font-style: italic;
-		color: var(--color-link);
-		font-weight: 500;
+		color: var(--pastel-birthday-text);
+		font-weight: 600;
+	}
+	
+	.decade-container {
+		display: block;
+		margin: 3em 0 2em;
+		text-align: center;
+		position: relative;
 	}
 	
 	.decade-marker {
-		display: block;
-		font-size: 1.3em;
-		font-weight: 600;
+		display: inline-block;
+		font-family: inherit;
+		font-size: 1.1em;
+		font-weight: 500;
+		font-style: italic;
 		color: var(--color-text);
-		text-align: center;
-		margin: 1.5em 0 0.75em;
-		background: rgba(128, 128, 128, 0.1);
-		padding: 0.75em 1em;
-		border-radius: 16px;
-		letter-spacing: -0.02em;
+		background: rgba(0, 0, 0, 0.03);
+		padding: 0.75rem 1.5rem;
+		border-radius: 50px;
+		letter-spacing: 0.05em;
+		user-select: none;
+		position: relative;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		transition: all 0.2s ease;
+	}
+
+	.decade-marker:hover {
+		background: rgba(0, 0, 0, 0.05);
+	}
+
+	.decade-container::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: rgba(0, 0, 0, 0.06);
+		z-index: -1;
 	}
 
 	.today {
