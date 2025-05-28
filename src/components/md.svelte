@@ -39,15 +39,27 @@
 		max-width: 100%;
 	}
 
-	.md-content :global(img) {
-		max-width: 100%;
-		height: auto;
-	}
-
 	.md-content :global(hr) {
 		border: none;
 		border: 1px solid var(--color-text);
 		margin: 1rem 0;
 		opacity: 0.3;
+	}
+
+	.md-content :global(p) {
+		margin: 0 0 1em 0;
+	}
+
+	.md-content :global(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.md-content :global(a) {
+		color: var(--color-link);
+		text-decoration: none;
+	}
+
+	.md-content :global(a:hover) {
+		text-decoration: underline;
 	}
 </style>

@@ -45,9 +45,9 @@
 
 	.birthday {
 		letter-spacing: normal;
-		background-color: rgba(253, 39, 11, 0.05);
-		padding: 0.4em 0.6em;
-		border-radius: 0.25rem;
+		background-color: rgba(253, 39, 11, 0.08);
+		padding: 0.5em 0.75em;
+		border-radius: 12px;
 		cursor: default;
 		font-size: 0.9em;
 		line-height: 1.4;
@@ -55,9 +55,13 @@
 		display: inline-block;
 		white-space: nowrap;
 		vertical-align: baseline;
-		/* Prevent breaking by ensuring it goes to new line if needed */
 		word-break: keep-all;
 		overflow-wrap: normal;
+		position: relative;
+	}
+
+	.birthday:hover {
+		background-color: rgba(253, 39, 11, 0.12);
 	}
 	
 	.birthday:hover::after {
@@ -66,16 +70,17 @@
 		bottom: 100%;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: var(--color-bg);
-		color: var(--color-text);
-		padding: 0.4em 0.6em;
-		border-radius: 0.25rem;
-		font-size: 0.9em;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+		background-color: rgba(0, 0, 0, 0.85);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		color: white;
+		padding: 0.5em 0.75em;
+		border-radius: 8px;
+		font-size: 0.85em;
 		white-space: nowrap;
-		margin-bottom: 5px;
+		margin-bottom: 8px;
 		z-index: 100;
-		border: 1px solid rgba(253, 39, 11, 0.2);
+		animation: tooltipFadeIn 0.2s ease-out;
 	}
 	
 	.age {
@@ -86,15 +91,15 @@
 	
 	.decade-marker {
 		display: block;
-		font-size: 1.2em;
-		font-weight: bold;
-		color: var(--color-link);
+		font-size: 1.3em;
+		font-weight: 600;
+		color: var(--color-text);
 		text-align: center;
-		margin: 1em 0 0.5em;
-		background-color: rgba(253, 39, 11, 0.05);
-		padding: 0.5em;
-		border-radius: 0.25rem;
-		letter-spacing: normal;
+		margin: 1.5em 0 0.75em;
+		background: rgba(128, 128, 128, 0.1);
+		padding: 0.75em 1em;
+		border-radius: 16px;
+		letter-spacing: -0.02em;
 	}
 
 	.today {
@@ -140,6 +145,15 @@
 		}
 		100% {
 			scale: calc(3 * 0.8 / 9);
+		}
+	}
+
+	@keyframes tooltipFadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
 </style>

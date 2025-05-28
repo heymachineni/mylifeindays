@@ -35,12 +35,11 @@
 	>
 		<aside on:click={(e) => e.stopPropagation()}>
 			<div class="header">
-			<h2>{title}</h2>
-				<button class="close-btn" on:click={() => ((day = undefined), (date = undefined))}>×</button>
+				<h2>{title}</h2>
 			</div>
 			
 			<div class="content">
-			<Md content={day.desc} />
+				<Md content={day.desc} />
 			</div>
 		</aside>
 	</div>
@@ -53,74 +52,115 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.4);
 		z-index: 1000;
-		backdrop-filter: blur(2px);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		padding: 20px;
 	}
 
 	aside {
-		background-color: var(--color-bg);
-		max-width: 640px;
-		width: 90%;
-		max-height: 80vh;
-		padding: 1.5rem;
-		border-radius: 0.5rem;
-		box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-		animation: fadeIn 0.2s ease-out;
+		background-color: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		max-width: 600px;
+		width: 100%;
+		max-height: 85vh;
+		border-radius: 20px;
+		box-shadow: 
+			0 25px 50px -12px rgba(0, 0, 0, 0.25),
+			0 0 0 1px rgba(255, 255, 255, 0.1);
+		animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 	
 	.header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 1.25rem;
-		padding-bottom: 0.75rem;
-		border-bottom: 1px solid rgba(253, 39, 11, 0.1);
+		padding: 24px 24px 20px 24px;
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
 	}
 
 	h2 {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 		font-weight: 600;
 		margin: 0;
 		color: var(--color-link);
-	}
-	
-	.close-btn {
-		background: none;
-		border: none;
-		font-size: 1.5rem;
-		color: var(--color-text);
-		cursor: pointer;
-		width: 2rem;
-		height: 2rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		transition: background-color 0.2s;
-		margin-left: 1rem;
-	}
-
-	.close-btn:hover {
-		background-color: rgba(253, 39, 11, 0.1);
+		letter-spacing: -0.02em;
+		line-height: 1.3;
 	}
 	
 	.content {
 		overflow-y: auto;
+		padding: 24px;
 		line-height: 1.6;
-		padding-right: 0.5rem;
+		flex: 1;
+	}
+
+	.content :global(.md-content p) {
+		margin: 0 0 16px 0;
+		color: var(--color-text);
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.content :global(.md-content p:last-child) {
+		margin-bottom: 0;
+	}
+
+	/* Custom scrollbar for webkit browsers */
+	.content::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	.content::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.content::-webkit-scrollbar-thumb {
+		background: rgba(0, 0, 0, 0.2);
+		border-radius: 3px;
+	}
+
+	.content::-webkit-scrollbar-thumb:hover {
+		background: rgba(0, 0, 0, 0.3);
 	}
 	
-	@keyframes fadeIn {
+	@keyframes modalSlideIn {
 		from {
 			opacity: 0;
-			transform: translateY(10px);
+			transform: translateY(20px) scale(0.95);
 		}
 		to {
 			opacity: 1;
-			transform: translateY(0);
+			transform: translateY(0) scale(1);
+		}
+	}
+
+	/* Mobile responsiveness */
+	@media (max-width: 640px) {
+		.overlay {
+			padding: 16px;
+		}
+		
+		aside {
+			border-radius: 16px;
+			max-height: 90vh;
+		}
+		
+		.header {
+			padding: 20px 20px 16px 20px;
+		}
+		
+		.content {
+			padding: 20px;
+		}
+		
+		h2 {
+			font-size: 1.25rem;
 		}
 	}
 </style>

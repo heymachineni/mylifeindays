@@ -1,10 +1,15 @@
 - 1998-05-22:
-    name: Hello World! 🎂
+    name: 🐣Born!
     birthday: true
     desc: |
       My birthday - the day everything began.
       
       This special day creates yearly markers throughout the timeline.
+
+- 1998-09-04:
+    name: Google founded
+    desc: |
+      Larry Page and Sergey Brin found Google, changing how we search the internet.
 
 - 1998-12-25:
     name: First Christmas I remember
@@ -17,9 +22,14 @@
       A new member joins our family.
 
 - 2000-01-01:
-    name: Y2K - The world did not end!
+    name: Y2K
     desc: |
-      Celebrated the new millennium.
+      The world doesn't end. Weeee!
+
+- 2004-02-04:
+    name: Facebook launches
+    desc: |
+      Mark Zuckerberg launches Facebook from his Harvard dorm room.
 
 - 2005-09-01:
     name: Started school
@@ -36,20 +46,35 @@
     desc: |
       Entering the 2010s with hopes and dreams.
 
-- 2015-06-01:
-    name: Graduated high school
+- 2018-12-07:
+    name: 🗳️ Allowed to vote
     desc: |
-      A major milestone completed.
+      Legally allowed to vote in India. Finally!
+
+- 2019-06-01:
+    name: 🍻 I can legally drink! Cheers
+    desc: |
+      Time to celebrate responsibly!
+
+- 2019-12-31:
+    name: 🦠 Covid-19 starts
+    desc: |
+      First cases of COVID-19 reported in Wuhan, China.
 
 - 2020-01-01:
     name: Welcome to the 2020s
     desc: |
       A new decade full of possibilities.
 
-- 2022-11-30:
-    name: ChatGPT launches
+- 2020-11-20:
+    name: 🚗 Got my driver's license
     desc: |
-      OpenAI releases ChatGPT, bringing AI to the masses.
+      I can officially drive a car! Woop!
+
+- 2022-11-30:
+    name: 🤖 ChatGPT launches
+    desc: |
+      OpenAI releases ChatGPT, marking a major milestone in AI development.
 
 - 2025-05-24:
     name: Today - Building my timeline
@@ -68,10 +93,15 @@
     desc: |
       Celebrating the halfway point of the 21st century.
 
-- 2098-05-22:
-    name: Centennial birthday
+- 2072-02-01:
+    name: ☠️ My life expectancy expiration date
     desc: |
-      If I am lucky enough to reach 100 years old.
+      I will die around the average global life expectancy.
+
+- 2098-05-22:
+    name: 🚲 Goal - Ride a bike around the street on my 100th birthday
+    desc: |
+      If I'm lucky enough to reach 100 years old, this is my goal!
 
 - 2100-12-31:
     name: End of timeline
