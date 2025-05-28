@@ -5,13 +5,13 @@
 	export let day: RenderableEvent | undefined;
 	export let date: Date | undefined;
 
-	const options: Intl.DateTimeFormatOptions = {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric'
-	};
-
-	$: title = day ? new Intl.DateTimeFormat('en-US', options).format(date) : '';
+	// Format date as DD-MM-YYYY
+	$: title = day && date ? (() => {
+		const day_num = date.getDate().toString().padStart(2, '0');
+		const month = (date.getMonth() + 1).toString().padStart(2, '0');
+		const year = date.getFullYear();
+		return `${day_num}-${month}-${year}`;
+	})() : '';
 </script>
 
 {#if day && day.desc}

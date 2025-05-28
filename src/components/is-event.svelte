@@ -14,6 +14,12 @@
 		trackEvent(`select:${event.name}`);
 		}
 	};
+	
+	// Format date as DD-MM-YYYY for tooltip
+	$: formattedDate = event.start ? (() => {
+		const [year, month, day] = event.start.split('-');
+		return `${day}-${month}-${year}`;
+	})() : '';
 </script>
 
 <button
@@ -21,7 +27,7 @@
 	on:click={handleSelect}
 	class="is-event"
 	class:has-description={!!event.desc}
-	data-tooltip={event.start}
+	data-tooltip={formattedDate}
 ><Md inline content={event.name} /></button>
 
 <style>
@@ -37,13 +43,18 @@
 
 	.is-event {
 		background-color: rgba(253, 39, 11, 0.1);
-		padding: 0.25em 1ch 0.4em;
-		position: relative;
-		top: -0.1em;
+		padding: 0.4em 0.6em;
 		border-radius: 0.25rem;
-		line-height: 1;
+		line-height: 1.4;
 		transition: background-color 0.2s;
 		position: relative;
+		font-size: 0.9em;
+		height: auto;
+		display: inline-block;
+		vertical-align: baseline;
+		white-space: nowrap;
+		word-break: keep-all;
+		overflow-wrap: normal;
 	}
 
 	.is-event:hover {
@@ -58,9 +69,9 @@
 		transform: translateX(-50%);
 		background-color: var(--color-bg);
 		color: var(--color-text);
-		padding: 0.25em 0.5em;
+		padding: 0.4em 0.6em;
 		border-radius: 0.25rem;
-		font-size: 0.85em;
+		font-size: 0.9em;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 		white-space: nowrap;
 		margin-bottom: 5px;

@@ -6,6 +6,12 @@
 	// Get year from the marker's start date (YYYY-MM-DD format)
 	$: year = marker.start ? marker.start.substring(0, 4) : '';
 	
+	// Format date as DD-MM-YYYY for tooltip
+	$: formattedDate = marker.start ? (() => {
+		const [year, month, day] = marker.start.split('-');
+		return `${day}-${month}-${year}`;
+	})() : '';
+	
 	// Determine if this is a past or future birthday
 	$: currentYear = new Date().getFullYear();
 	$: birthdayYear = parseInt(year);
@@ -14,7 +20,7 @@
 </script>
 
 {#if marker.markerType === 'birthday'}
-	<span class="birthday" data-tooltip="{marker.start}">
+	<span class="birthday" data-tooltip="{formattedDate}">
 		{verb} <span class="age">{marker.name}</span> in {year}
 	</span>
 {/if}
@@ -39,14 +45,19 @@
 
 	.birthday {
 		letter-spacing: normal;
-		position: relative;
-		top: -0.07em;
 		background-color: rgba(253, 39, 11, 0.05);
-		padding: 0.25em 0.5em;
+		padding: 0.4em 0.6em;
 		border-radius: 0.25rem;
-		position: relative;
 		cursor: default;
-		font-size: 0.85em;
+		font-size: 0.9em;
+		line-height: 1.4;
+		height: auto;
+		display: inline-block;
+		white-space: nowrap;
+		vertical-align: baseline;
+		/* Prevent breaking by ensuring it goes to new line if needed */
+		word-break: keep-all;
+		overflow-wrap: normal;
 	}
 	
 	.birthday:hover::after {
@@ -57,9 +68,9 @@
 		transform: translateX(-50%);
 		background-color: var(--color-bg);
 		color: var(--color-text);
-		padding: 0.25em 0.5em;
+		padding: 0.4em 0.6em;
 		border-radius: 0.25rem;
-		font-size: 0.85em;
+		font-size: 0.9em;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 		white-space: nowrap;
 		margin-bottom: 5px;
