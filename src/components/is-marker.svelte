@@ -59,7 +59,7 @@
 		padding: 0.5em 0.75em;
 		border-radius: 50px;
 		cursor: default;
-		font-size: 0.9em;
+		font-size: calc(0.9em + 2px);
 		line-height: 1.4;
 		height: auto;
 		display: inline-block;
@@ -110,7 +110,7 @@
 	.decade-marker {
 		display: inline-block;
 		font-family: inherit;
-		font-size: 1.1em;
+		font-size: 1.3em;
 		font-weight: 500;
 		font-style: italic;
 		color: var(--color-text);
