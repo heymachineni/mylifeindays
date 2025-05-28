@@ -83,7 +83,6 @@
 		pointer-events: none;
 	}
 	.is-event.has-description {
-		text-decoration: underline;
 		cursor: pointer;
 	}
 </style>

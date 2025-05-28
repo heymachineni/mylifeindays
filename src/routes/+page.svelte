@@ -51,7 +51,7 @@
 {#if isMobile}
 	<div class="mobile-message">
 		<p>A full life deserves a full view.</p>
-		<p>Come back on a desktop to explore your timeline in full.</p>
+		<p>Come back on a desktop to explore my timeline in full.</p>
 	</div>
 {:else}
 <article>

@@ -4,7 +4,7 @@
 
 <header>
 	<div class="header-top">
-		<h1><a href="/">Life in Days</a></h1>
+		<h1>Life in Days</h1>
 		<!-- Admin button removed as requested -->
 	</div>
 	<p>
@@ -31,11 +31,7 @@
 		font-size: 3rem;
 		font-weight: 500;
 		margin-bottom: 0;
-	}
-
-	h1 a {
-		color: inherit;
-		text-decoration: none;
+		color: var(--color-text);
 	}
 
 	p {

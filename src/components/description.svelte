@@ -5,12 +5,22 @@
 	export let day: RenderableEvent | undefined;
 	export let date: Date | undefined;
 
-	// Format date as DD-MM-YYYY
+	// Format date as "May 22nd, 1998"
 	$: title = day && date ? (() => {
-		const day_num = date.getDate().toString().padStart(2, '0');
-		const month = (date.getMonth() + 1).toString().padStart(2, '0');
+		const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+						'July', 'August', 'September', 'October', 'November', 'December'];
+		const day_num = date.getDate();
+		const month = months[date.getMonth()];
 		const year = date.getFullYear();
-		return `${day_num}-${month}-${year}`;
+		
+		// Add ordinal suffix (st, nd, rd, th)
+		const getOrdinal = (n: number) => {
+			const s = ["th", "st", "nd", "rd"];
+			const v = n % 100;
+			return n + (s[(v - 20) % 10] || s[v] || s[0]);
+		};
+		
+		return `${month} ${getOrdinal(day_num)}, ${year}`;
 	})() : '';
 </script>
 
